@@ -2,10 +2,151 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>Sukwipe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sukwipe ― スワイプで写真を仕分ける</title>
+<meta name="description" content="写真をスワイプで選別し、ゴミ箱に集約してからまとめて削除するAndroidアプリ「Sukwipe」の公式サイトです。">
+<style>
+  :root {
+    --blue: #3D6EF2;
+    --green: #2FAE6B;
+    --red: #E2473C;
+    --bg: #F7F8FB;
+    --text: #1C1F26;
+    --muted: #6B7280;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  header {
+    background: linear-gradient(135deg, var(--blue), #6C8CF5);
+    color: #fff;
+    padding: 56px 20px 72px;
+    text-align: center;
+  }
+  header img {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  header h1 {
+    margin: 20px 0 8px;
+    font-size: 28px;
+  }
+  header p {
+    margin: 0;
+    opacity: 0.92;
+    font-size: 16px;
+  }
+  main {
+    max-width: 680px;
+    margin: -36px auto 0;
+    padding: 0 20px 60px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .card h2 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  .swipe-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    display: grid;
+    gap: 10px;
+  }
+  .swipe-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--bg);
+    font-size: 14px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .dot.trash { background: var(--red); }
+  .dot.keep { background: var(--green); }
+  .dot.fav { background: var(--blue); }
+  .dot.later { background: #A1A8B3; }
+  .cta {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 0 20px 40px;
+  }
+  footer a { color: var(--muted); }
+  .links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+</style>
 </head>
 <body>
-<h1>Sukwipe</h1>
-<p>写真をスワイプで選別するAndroidアプリ「Sukwipe」の公式サイトです。</p>
+<header>
+  <img src="icon.png" alt="Sukwipe アイコン">
+  <h1>Sukwipe</h1>
+  <p>スワイプで写真を仕分ける、たまった写真の整理アプリ</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>写真がたまって整理が面倒――そんなときに</h2>
+    <p>1枚ずつカードが表示され、スワイプするだけで仕分けが進みます。左右だけでなく上下にも振れるので、残す・消すの2択に迷わず対応できます。</p>
+    <ul class="swipe-list">
+      <li><span class="dot trash"></span>左にスワイプ ― ゴミ箱へ</li>
+      <li><span class="dot keep"></span>右にスワイプ ― 残す</li>
+      <li><span class="dot fav"></span>上にスワイプ ― お気に入り</li>
+      <li><span class="dot later"></span>下にスワイプ ― 後で考える</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>端末の外には送信しません</h2>
+    <p>スクリーンショット判定・連写検出・類似写真検出は、すべて端末内の計算だけで完結します。写真データがどこかに送られることはありません。</p>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <h2>ダウンロード</h2>
+    <p>Google Play からインストールできます。</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.sukwipe.sukwipe">Google Play で見る</a>
+  </div>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="mailto:shiftbell.off@gmail.com">お問い合わせ</a>
+  </div>
+  <p>&copy; 2026 Sukwipe</p>
+</footer>
 </body>
 </html>
